@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 Visualized</title>
+    <link href="./index.css" rel="stylesheet">
+</head>
+<body>
+    <h1>2023 Data Visualization</h1>
+
+    <div id="content-container">
+        <h2>Body Weight</h2>
+
+        <div class="chart-container">
+            <canvas id="weightChart" class="single-chart"></canvas>
+        </div>
+
+        <h2>Time On Goals</h2>
+        <div class="chart-container">
+            <canvas id="timeSpentChart" class="single-chart"></canvas>
+        </div>
+    
+        <h2>Happiness</h2>
+        <div id="happiness-section">
+            <div id="happiness-labels">
+                <div>
+                    <div class="happiness-label awful"></div>
+                    <span>Awful</span>
+                </div>
+                <div>
+                    <div class="happiness-label bad"></div>
+                    <span>Bad</span>
+                </div>
+                <div>
+                    <div class="happiness-label unremarkable"></div>
+                    <span>Unremarkable</span>
+                </div>
+                <div>
+                    <div class="happiness-label good"></div>
+                    <span>Good</span>
+                </div>
+                <div>
+                    <div class="happiness-label great"></div>
+                    <span>Great</span>
+                </div>
+            </div>
+            <div id="happiness-charts-container">
+                <div class="happiness-container">
+                    <canvas id="JanHappinessChart" class="happiness-chart"></canvas>
+                </div>
+                <div class="happiness-container">
+                    <canvas id="FebHappinessChart" class="happiness-chart"></canvas>
+                </div>
+                <div class="happiness-container">
+                    <canvas id="MarHappinessChart" class="happiness-chart"></canvas>
+                </div>
+                <div class="happiness-container">
+                    <canvas id="AprHappinessChart" class="happiness-chart"></canvas>
+                </div>
+                <div class="happiness-container">
+                    <canvas id="MayHappinessChart" class="happiness-chart"></canvas>
+                </div>
+                <div class="happiness-container">
+                    <canvas id="JunHappinessChart" class="happiness-chart"></canvas>
+                </div>
+                <div class="happiness-container">
+                    <canvas id="JulHappinessChart" class="happiness-chart"></canvas>
+                </div>
+                <div class="happiness-container">
+                    <canvas id="AugHappinessChart" class="happiness-chart"></canvas>
+                </div>
+                <div class="happiness-container">
+                    <canvas id="SeptHappinessChart" class="happiness-chart"></canvas>
+                </div>
+                <div class="happiness-container">
+                    <canvas id="OctHappinessChart" class="happiness-chart"></canvas>
+                </div>
+                <div class="happiness-container">
+                    <canvas id="NovHappinessChart" class="happiness-chart"></canvas>
+                </div>
+                <div class="happiness-container">
+                    <canvas id="DecHappinessChart" class="happiness-chart"></canvas>
+                </div>    
+            </div>
+            
+        </div>
+        
+    
+    </div>
+    
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./graphs.js"></script>
+</html>

@@ -1,0 +1,89 @@
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 70px;
+}
+
+.chart-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.single-chart {
+    width: 800px !important;
+    height: 400px !important;
+}
+
+.happiness-container {
+    display: flex;
+    position: relative;
+    flex: 0 1 auto;
+}
+
+.happiness-chart {
+    width: 200px !important;
+    height: 200px !important;
+}
+
+.happiness-label {
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+}
+
+.awful {
+    background-color: rgb(54, 52, 46);
+}
+
+.bad {
+    background-color: rgb(212, 44, 6);
+}
+
+.unremarkable {
+    background-color: rgb(237, 237, 38);
+}
+
+
+.good {
+    background-color: rgb(20, 150, 20);
+}
+
+.great {
+    background-color: rgb(65, 250, 228);
+}
+
+
+#happiness-section {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#happiness-labels {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+#happiness-charts-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 12px;
+    width: 800px;
+    margin-top: 20px;
+}
+
+#content-container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}

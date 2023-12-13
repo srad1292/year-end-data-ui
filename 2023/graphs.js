@@ -7,6 +7,7 @@ let data = getData();
 buildWeightChart();
 // Determine colors when real data comes in
 buildTimeSpentChart();
+buildCategoryTotalChart();
 buildHappinessCharts();
 
 
@@ -75,7 +76,59 @@ function buildTimeSpentChart() {
             ]
         },
         options: {
-            responsive: true
+            responsive: true,
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Minutes'
+                    }
+                }
+            },
+        }
+    });
+}
+
+function buildCategoryTotalChart() {
+    const timeSpentCtx = document.getElementById('categoryTotalChart');
+    let categoryTotalData = [
+        { label: 'Planning', value: data.categoryTotals.projectPlanning},
+        { label: 'Game Dev', value: data.categoryTotals.gameDev},
+        { label: 'General Programming', value: data.categoryTotals.generalProgramming},
+        { label: 'VFX', value: data.categoryTotals.vfx},
+        { label: 'SFX', value: data.categoryTotals.sfx},
+        { label: 'Writing', value: data.categoryTotals.writing},
+        { label: 'Research/Studying', value: data.categoryTotals.researchAndStudying},
+    ];
+
+    let sortedData = categoryTotalData.sort((a,b) => b.value-a.value);
+    // @ts-ignore
+    new Chart(timeSpentCtx, {
+        type: 'bar',
+        data: {
+            labels: sortedData.map(cat => cat.label),
+            datasets: [
+                {
+                    data: sortedData.map(cat => cat.value)
+                }
+            ],
+        },
+        options: {
+            // responsive: true
+            indexAxis: 'x',
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Minutes'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false,
+                },
+            }
         }
     });
 }
@@ -126,6 +179,15 @@ function buildHappinessCharts() {
 
 function getData() {
     return {
+        "unexpectedHourValueCount": 21,
+        "didHourCount": 344,
+        "didNotDoHourCount": 0,
+        "didMoreThanHourCount": 202,
+        "percentMoreThanHour": "58.72",
+        "longestDailyTime": 244,
+        "longestMonthlyTime": 3238,
+        "totalTime": 29982,
+        "averageDailyTime": "87.16",
         "weights": [
             {
                 "date": "1/1/23",
@@ -329,7 +391,7 @@ function getData() {
                 229,
                 659,
                 402,
-                null
+                169
             ],
             "gameDev": [
                 0,
@@ -343,7 +405,7 @@ function getData() {
                 359,
                 38,
                 0,
-                null
+                0
             ],
             "generalProgramming": [
                 1225,
@@ -357,7 +419,7 @@ function getData() {
                 1669,
                 178,
                 1369,
-                null
+                594
             ],
             "vfx": [
                 400,
@@ -371,7 +433,7 @@ function getData() {
                 0,
                 0,
                 0,
-                null
+                0
             ],
             "sfx": [
                 0,
@@ -385,7 +447,7 @@ function getData() {
                 0,
                 0,
                 0,
-                null
+                0
             ],
             "writing": [
                 189,
@@ -399,7 +461,7 @@ function getData() {
                 344,
                 391,
                 30,
-                null
+                0
             ],
             "researchAndStudying": [
                 891,
@@ -413,8 +475,17 @@ function getData() {
                 323,
                 957,
                 312,
-                null
+                6
             ]
+        },
+        "categoryTotals": {
+            "projectPlanning": 3164,
+            "gameDev": 5647,
+            "generalProgramming": 9590,
+            "vfx": 1760,
+            "sfx": 112,
+            "writing": 2206,
+            "researchAndStudying": 7503
         },
         "happiness": [
             {

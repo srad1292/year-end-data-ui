@@ -14,8 +14,10 @@ h1 {
 }
 
 .single-chart {
-    width: 800px !important;
-    height: 400px !important;
+    /* width: 1120px !important;
+    height: 630px !important; */
+    width: 960px !important;
+    height: 540px !important;
 }
 
 .happiness-container {
@@ -25,7 +27,7 @@ h1 {
 }
 
 .happiness-chart {
-    width: 300px !important;
+    width: 400px !important;
     height: 300px !important;
 }
 
@@ -78,7 +80,7 @@ h1 {
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 12px;
-    width: 900px;
+    width: 1200px;
     margin-top: 20px;
 }
 

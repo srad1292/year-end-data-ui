@@ -8,6 +8,7 @@ buildWeightChart();
 // Determine colors when real data comes in
 buildTimeSpentChart();
 buildCategoryTotalChart();
+buildMonthlyStackedChart();
 buildHappinessCharts();
 
 
@@ -85,6 +86,57 @@ function buildTimeSpentChart() {
                     }
                 }
             },
+        }
+    });
+}
+
+// Todo: Add in stacked bar graph for time spent on category by month
+function buildMonthlyStackedChart() {
+    const monthlyStackedChartCtx = document.getElementById('monthlyStackedChart');
+    const datasets = [
+        { label: 'Planning', data: data.timeSpent.projectPlanning},
+        { label: 'Game Dev', data: data.timeSpent.gameDev},
+        { label: 'General Programming', data: data.timeSpent.generalProgramming},
+        { label: 'VFX', data: data.timeSpent.vfx},
+        { label: 'SFX', data: data.timeSpent.sfx},
+        { label: 'Writing', data: data.timeSpent.writing},
+        { label: 'Research/Studying', data: data.timeSpent.researchAndStudying},
+    ];
+
+    console.log("Stacked data");
+    console.log(datasets);
+
+    new Chart(monthlyStackedChartCtx, {
+        type: 'bar',
+        data: {
+            labels: months,
+            datasets: datasets.map(dataset => {
+                return {
+                    label: dataset.label,
+                    data: dataset.data,
+                };
+            }),
+        },
+        options: {
+            // responsive: true
+            indexAxis: 'x',
+            scales: {
+                y: {
+                    stacked: true,
+                    title: {
+                        display: true,
+                        text: 'Minutes'
+                    }
+                },
+                x: {
+                    stacked: true,
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                },
+            }
         }
     });
 }

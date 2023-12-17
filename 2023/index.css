@@ -6,6 +6,44 @@ h1 {
     margin-bottom: 70px;
 }
 
+.number-analytics-container {
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 160px;
+    height: 140px;
+    text-align: center;
+    background-color: white;
+    /* padding: 0 8px; */
+}
+
+.analytics-label {
+    padding-top: 3px;
+}
+
+.analytics-value {
+    font-weight: bold;
+    font-size: 1.6em;
+    height: 96px;
+    line-height: 96px;
+}
+
+#number-analytics-section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+    column-gap: 1.2rem;
+    background-color: rgba(175, 179, 186, 0.4);
+    padding: 12px;
+}
+
+.analytics-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 1.2rem;
+    column-gap: 1.2rem;
+}
+
 .chart-container {
     display: inline-block;
     position: relative;

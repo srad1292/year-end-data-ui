@@ -4,32 +4,26 @@ let data = getData();
 
 
 
-buildWeightChart();
+// buildWeightChart();
 // Determine colors when real data comes in
+buildNumberAnalytics();
 buildTimeSpentChart();
 buildCategoryTotalChart();
 buildMonthlyStackedChart();
 buildHappinessCharts();
 
 
-function buildWeightChart() {
-    const weightCtx = document.getElementById('weightChart');
-    // @ts-ignore
-    new Chart(weightCtx, {
-        type: 'line',
-        data: {
-            labels: data.weights.map(record => record.date),
-            datasets: [{
-                label: 'Weight (lb)',
-                data: data.weights.map(record => record.weight),
-                fill: false
-            }]
-        },
-        options: {
-            responsive: true
-        }
-    });
+function buildNumberAnalytics() {
+    document.getElementById("days-completed").innerText = `${data.didHourCount}`;
+    document.getElementById("more-than-hour").innerText = `${data.didMoreThanHourCount}`;
+    document.getElementById("percent-more-than-hour").innerText = `${data.percentMoreThanHour}%`;
+    document.getElementById("longest-daily").innerText = `${data.longestDailyTime}`;
+    document.getElementById("longest-monthly").innerText = `${data.longestMonthlyTime}`;
+    document.getElementById("total-time").innerText = `${data.totalTime}`;
+    document.getElementById("average-daily-time").innerText = `${data.averageDailyTime}`;
 }
+
+
 
 function buildTimeSpentChart() {
     const timeSpentCtx = document.getElementById('timeSpentChart');
@@ -224,6 +218,25 @@ function buildHappinessCharts() {
                     },
                 }
             });
+        }
+    });
+}
+
+function buildWeightChart() {
+    const weightCtx = document.getElementById('weightChart');
+    // @ts-ignore
+    new Chart(weightCtx, {
+        type: 'line',
+        data: {
+            labels: data.weights.map(record => record.date),
+            datasets: [{
+                label: 'Weight (lb)',
+                data: data.weights.map(record => record.weight),
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true
         }
     });
 }

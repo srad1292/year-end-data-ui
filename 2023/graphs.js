@@ -15,12 +15,32 @@ buildHappinessCharts();
 
 function buildNumberAnalytics() {
     document.getElementById("days-completed").innerText = `${data.didHourCount}`;
+    // document.getElementById("days-failed").innerText = `${data.didNotDoHourCount}`;
     document.getElementById("more-than-hour").innerText = `${data.didMoreThanHourCount}`;
     document.getElementById("percent-more-than-hour").innerText = `${data.percentMoreThanHour}%`;
-    document.getElementById("longest-daily").innerText = `${data.longestDailyTime}`;
-    document.getElementById("longest-monthly").innerText = `${data.longestMonthlyTime}`;
-    document.getElementById("total-time").innerText = `${data.totalTime}`;
-    document.getElementById("average-daily-time").innerText = `${data.averageDailyTime}`;
+    document.getElementById("total-time").innerText = `${getHoursAndMinutesFromTime(data.totalTime)}`;
+    document.getElementById("longest-daily").innerText = `${getHoursAndMinutesFromTime(data.longestDailyTime)}`;
+    document.getElementById("longest-monthly").innerText = `${getHoursAndMinutesFromTime(data.longestMonthlyTime)}`;
+    document.getElementById("average-daily-time").innerText = `${getHoursAndMinutesFromTime(data.averageDailyTime)}`;
+    document.getElementById("average-monthly-time").innerText = `${getHoursAndMinutesFromTime(data.averageMonthlyTime)}`;
+}
+
+//2498.50
+
+function averageTimeToDisplay(time) {
+    let seconds = getSecondsFromTime(time);
+    let hoursMins = getHoursAndMinutesFromTime(time);
+    return `${hoursMins} ${seconds}s`;
+}
+
+function getSecondsFromTime(time) {
+    return Math.round(time%1*60);
+}
+
+function getHoursAndMinutesFromTime(time) {
+    let hours = Math.floor(time/60);
+    let minutes = Math.floor(time)%60;
+    return `${hours}hr ${minutes}min`;
 }
 
 
@@ -253,6 +273,7 @@ function getData() {
         "longestMonthlyTime": 3238,
         "totalTime": 29982,
         "averageDailyTime": "87.16",
+        "averageMonthlyTime": "2498.50",
         "weights": [
             {
                 "date": "1/1/23",

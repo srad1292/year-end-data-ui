@@ -34,6 +34,8 @@ h1 {
     column-gap: 1.2rem;
     background-color: rgba(175, 179, 186, 0.4);
     padding: 12px;
+    margin-bottom: 5rem;
+    width: fit-content;
 }
 
 .analytics-row {
@@ -56,6 +58,7 @@ h1 {
     height: 630px !important; */
     width: 960px !important;
     height: 540px !important;
+    margin-left: -80px;
 }
 
 .happiness-container {
@@ -120,6 +123,7 @@ h1 {
     row-gap: 12px;
     width: 1200px;
     margin-top: 20px;
+    margin-left: -180px;
 }
 
 #content-container {

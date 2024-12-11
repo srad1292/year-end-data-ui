@@ -1,0 +1,29 @@
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 70px;
+}
+
+.chart-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.single-chart {
+    /* width: 1120px !important;
+    height: 630px !important; */
+    width: 960px !important;
+    height: 540px !important;
+    margin-left: -80px;
+}
+
+
+#content-container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
